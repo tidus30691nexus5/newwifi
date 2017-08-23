@@ -66,9 +66,31 @@
     </div>
     <div id="content">
         <p class="message">$message</p>
+		<p id="donennr">Will trying login after <b id="timec" style="color:blue">5</b>s...</p>
     </div>
 
 </div>
+<script>
+var intervalId = null;
+var timewaitaftersendone=5;
+function bip(){
+timewaitaftersendone--;
+	if(timewaitaftersendone==0)
+	{
+		document.getElementById("donennr").textContent ="Redirecting to login...";
+		clearInterval(intervalId);
+		location.reload();
+	}
+	else{
+	
+		document.getElementById("timec").textContent =timewaitaftersendone;
+
+		
+	}
+	
+};
+intervalId = setInterval(bip, 1000);
+</script>
 
 
 </body>
