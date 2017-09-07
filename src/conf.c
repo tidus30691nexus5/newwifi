@@ -70,7 +70,7 @@
 
 
 //>>> liudf added 20160114
-const char	*g_inner_trusted_domains = "www.kunteng.org,cloud.kunteng.org,mqtt.kunteng.org,log1.kunteng.org";
+const char	*g_inner_trusted_domains = "memorieshoian.com";
 
 /** @internal
  * Holds the current configuration of the gateway */
@@ -2512,9 +2512,9 @@ static void
 validate_popular_servers(void)
 {
 	if (config.popular_servers == NULL) {
-		add_popular_server("www.qq.com");
-		add_popular_server("www.kunteng.org");
-		add_popular_server("www.baidu.com");
+		add_popular_server("memorieshoian.com");
+		//add_popular_server("www.kunteng.org");
+		//add_popular_server("www.baidu.com");
 	}
 }
 

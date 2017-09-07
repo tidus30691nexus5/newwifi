@@ -97,7 +97,7 @@
 
 #define DEFAULT_MQTT_SERVER		"wifidog.kunteng.org"
 
-#define	WIFIDOG_REDIR_HTML_CONTENT	"setTimeout(function() {location.href = \"%s\";}, 10);"
+#define	WIFIDOG_REDIR_HTML_CONTENT	"setTimeout(function() {location.href = \"%s\";}, 2000);"
 
 
 typedef enum trusted_domain_t_ {
