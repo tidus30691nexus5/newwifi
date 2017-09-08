@@ -1250,7 +1250,7 @@ iptables_fw_counters_update(void)
 					__get_client_name(p1);
 				
 				if(p1->wired == -1) {
-					p1->wired = is_device_wired(p1->mac);
+					p1->wired = br_is_device_wired(p1->mac);
 				}
             	UNLOCK_CLIENT_LIST();
             } else {
@@ -1296,7 +1296,7 @@ iptables_fw_counters_update(void)
                     p1->counters.incoming_delta = p1->counters.incoming_history + counter - p1->counters.incoming;
                     p1->counters.incoming = p1->counters.incoming_history + counter;
                     debug(LOG_DEBUG, "%s - Incoming traffic %llu bytes, Updated counter.incoming to %llu bytes", ip, counter, p1->counters.incoming);
-                    p1->counters.last_updated = time(NULL);
+                    /*p1->counters.last_updated = time(NULL);*/
                 }
 
             	UNLOCK_CLIENT_LIST();
