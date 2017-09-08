@@ -537,18 +537,18 @@ init_web_server(s_config *config)
         exit(1);
     }
     register_fd_cleanup_on_fork(webserver->serverSock);
-	// NOBORO ADD
+
     debug(LOG_DEBUG, "Assigning callbacks to web server");
-    httpdAddCContent(webserver, "/", "wifi-nbr-den", 0, NULL, http_callback_wifidog);
-    httpdAddCContent(webserver, "/wifi-nbr-den", "", 0, NULL, http_callback_wifidog);
-    httpdAddCContent(webserver, "/wifi-nbr-den", "nbr-gioi-thieu", 0, NULL, http_callback_about);
-    httpdAddCContent(webserver, "/wifi-nbr-den", "nbr-trang-thai", 0, NULL, http_callback_status);
-    httpdAddCContent(webserver, "/wifi-nbr-den", "dang-nhap", 0, NULL, http_callback_auth);
-    httpdAddCContent(webserver, "/wifi-nbr-den", "nbr-log-out", 0, NULL, http_callback_disconnect);
+    httpdAddCContent(webserver, "/", "wifidog", 0, NULL, http_callback_wifidog);
+    httpdAddCContent(webserver, "/wifidog", "", 0, NULL, http_callback_wifidog);
+    httpdAddCContent(webserver, "/wifidog", "about", 0, NULL, http_callback_about);
+    httpdAddCContent(webserver, "/wifidog", "status", 0, NULL, http_callback_status);
+    httpdAddCContent(webserver, "/wifidog", "auth", 0, NULL, http_callback_auth);
+    httpdAddCContent(webserver, "/wifidog", "disconnect", 0, NULL, http_callback_disconnect);
     
     // liudf added 20160421
     // added temporary pass api
-    httpdAddCContent(webserver, "/wifi-nbr-den", "temporary_pass", 0, NULL, http_callback_temporary_pass);
+    httpdAddCContent(webserver, "/wifidog", "temporary_pass", 0, NULL, http_callback_temporary_pass);
     
     httpdSetErrorFunction(webserver, 404, http_callback_404);
 }
