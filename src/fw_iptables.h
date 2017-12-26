@@ -132,7 +132,6 @@ void iptables_fw_save_online_clients(void);
 
 void iptables_fw_set_mac_temporary(const char *, int);
 
-void update_trusted_mac_status(t_trusted_mac *tmac);
 
 void __get_client_name(t_client *client);
 
