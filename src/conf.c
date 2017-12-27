@@ -2519,11 +2519,11 @@ mark_auth_server_bad(t_auth_serv * bad_server)
 		close(bad_server->authserv_fd);
 		bad_server->authserv_fd = -1;
 		bad_server->authserv_fd_ref = 0;
-		if (bad_server->last_ip)
-			free(bad_server->last_ip);
-		bad_server->last_ip = NULL;
+		
 	}
-
+	if (bad_server->last_ip)
+		free(bad_server->last_ip);
+	bad_server->last_ip = NULL;
 	if (config.auth_servers == bad_server && bad_server->next != NULL) {
 		/* Go to the last */
 		for (tmp = config.auth_servers; tmp->next != NULL; tmp = tmp->next) ;
