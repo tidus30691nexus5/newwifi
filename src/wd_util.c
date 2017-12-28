@@ -1038,6 +1038,30 @@ is_device_wired(const char *mac)
 }
 
 
+/*
+ * val can be ip or domain
+ * 1: is online; 0: is unreachable
+ */
+int
+is_device_online(const char *val)
+{
+	char cmd[256] = {0};
+	FILE *fd = NULL;
+
+	if(val == NULL || strlen(val) < 4)
+		return 0;
+	
+	snprintf(cmd, 256, "/usr/sbin/wdping %s", val);
+	if((fd = popen(cmd, "r")) != NULL) {
+		char result[4] = {0};
+		fgets(result, 3, fd);
+		pclose(fd);
+		if(result[0] == '1')
+			return 1;
+	}
+
+	return 0;
+}
 
 // if olen is not NULL, set it rlen value
 char *evb_2_string(struct evbuffer *evb, int *olen) 

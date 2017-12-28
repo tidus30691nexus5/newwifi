@@ -113,6 +113,8 @@ int is_device_wired(const char *);
 int is_device_wired_intern(const char *mac, const char *bridge);
 int br_is_device_wired(const char *); // no popen impl
 
+/** @brief Is ip online or domain parsable */
+int is_device_online(const char *);
 
 void evdns_parse_trusted_domain_2_ip(t_domain_trusted *p);
 
