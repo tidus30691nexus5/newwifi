@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1" name="viewport">
@@ -148,7 +147,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container" style="display:block">
         <p>FREE WIFI</p>
@@ -168,5 +166,4 @@
         location.href = "$redir_url"
     }, 2000)
 </script>
-
 </html>
